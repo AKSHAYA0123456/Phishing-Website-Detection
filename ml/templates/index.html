@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Detection</title>
+    {% load static%}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: white;
+        }
+
+        h1,
+        h2 {
+            color: white;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        h2 {
+            margin: 20px 30px;
+        }
+
+        p {
+            color: white;
+        }
+
+        .content li {
+            padding: 0;
+            margin-left: 120px;
+        }
+
+        span {
+            margin-left: 50px;
+        }
+    </style>
+</head>
+
+<body class="bg">
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">CyberArea</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'main' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'phishing' %}">Phishing Detection</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'spamMail' %}">Spam Message</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'passShield' %}">PassSheild Scan</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Security Overview</h1>
+
+        <h2>Phishing Detection</h2>
+        <p>
+            <span>Phishing </span> a type of cyber attack where attackers trick individuals into
+            divulging sensitive
+            information,
+            such
+            as usernames, passwords, and credit card details, by posing as a trustworthy entity. Our phishing detection
+            system employs machine learning algorithms to analyze URLs and assess their likelihood of being phishing
+            attempts. Key features include:
+        </p>
+        <ul class="content">
+            <li>URL analysis using TF-IDF (Term Frequency-Inverse Document Frequency) techniques</li>
+            <li>Random Forest classification for predicting phishing URLs</li>
+            <li>Real-time assessment of user-submitted URLs</li>
+        </ul>
+
+        <h2>Spam Text Detection</h2>
+        <p>
+            <span>Spam</span> texts, often delivered via email, are unsolicited messages sent in bulk, typically for
+            advertising or
+            phishing purposes. Our spam text detection system utilizes machine learning to classify emails as either
+            "ham"
+            (not spam) or "spam." Key features include:
+        </p>
+        <ul class="content">
+            <li>Dataset training with a collection of spam and non-spam (ham) emails</li>
+            <li>CountVectorizer and Naive Bayes algorithm for email text classification</li>
+            <li>Effective filtering of unwanted messages from user inboxes</li>
+        </ul>
+
+        <h2>Password Security with SHA Key</h2>
+        <p>
+            <span>Password</span> security is a critical aspect of protecting user accounts. Our system enhances
+            password security
+            using
+            SHA hashing. When users enter a password, its SHA-1 hash is generated and checked against a database of
+            compromised passwords. Key features include:
+        </p>
+        <ul class="content">
+            <li>SHA-1 hashing for password encryption</li>
+            <li>Integration with the "Have I Been Pwned" API to check for compromised passwords</li>
+            <li>Real-time feedback on password security status</li>
+        </ul>
+
+        <h2>Disclaimer</h2>
+        <p>
+            <span>This</span> security system provides an additional layer of protection but does not guarantee absolute
+            security.
+            Users
+            are encouraged to follow best practices for online security, including the use of strong, unique passwords
+            and
+            vigilance against phishing attempts.
+        </p>
+
+        <h2>Contact Us</h2>
+        <p>
+            <span>If</span> you have any questions or concerns, please contact us at <a
+                href="mailto:info@example.com">info@example.com</a>.
+        </p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
